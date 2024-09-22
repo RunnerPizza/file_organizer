@@ -1,16 +1,11 @@
-# This is a sample Python script.
+from modules import organize_dir
 
-# Press Maiusc+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print('Which directory do you want to organize?')
+    base_dir: str = input('Insert the directory\'s path:')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # check for trailing slashes
+    while base_dir.endswith('/'):
+        base_dir = base_dir.removesuffix('/')
+
+    organize_dir(base_dir, base_dir)
